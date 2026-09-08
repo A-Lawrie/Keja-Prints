@@ -1,0 +1,10 @@
+{
+  "description": "Browse a curated catalogue of stylish Kenyan posters with clear pricing and finish options, then easily order your chosen wall art via WhatsApp.",
+  "robots": {
+    "index": false
+  },
+  "accessibility": {
+    "addBypassLinks": false,
+    "ignoreReducedMotion": false
+  }
+}
