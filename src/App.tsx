@@ -261,7 +261,7 @@ const CATEGORY_COVERS: Partial<Record<Category, string>> = {
 
 // ─── WhatsApp ──────────────────────────────────────────────────────────────────
 
-const WA = '254700000000'
+const WA = '254100709586'
 
 function waOrder(p: Product, finish: Finish, size: SizeKey) {
   const price = pricing(finish)[size]!
@@ -485,7 +485,22 @@ function Nav({ page, go }: { page: Page; go: (p: Page) => void }) {
     </>
   )
 }
+// ─── Watermark overlay ───────────────────────────────────────────────────────────
+// Sits on top of a protected image. Doesn't stop a determined screenshot/devtools
+// user, but makes a saved copy visibly unusable and deters casual right-click-save.
 
+function Watermark() {
+  return (
+    <div className="watermark-overlay" aria-hidden="true">
+      {Array.from({ length: 12 }).map((_, i) => <span key={i}>Keja Prints</span>)}
+    </div>
+  )
+}
+
+const noSave = {
+  draggable: false,
+  onContextMenu: (e: { preventDefault: () => void }) => e.preventDefault(),
+}
 // ─── Poster Card ───────────────────────────────────────────────────────────────
 
 function Card({ p, onClick }: { p: Product; onClick: () => void }) {
@@ -503,6 +518,7 @@ function Card({ p, onClick }: { p: Product; onClick: () => void }) {
           src={p.imageUrl}
           alt={`${p.name} poster`}
           loading="lazy"
+          {...noSave}
           style={{
             width: '100%', height: '100%', objectFit: 'cover', display: 'block',
             transform: hovered ? 'scale(1.045)' : 'scale(1)',
@@ -652,19 +668,19 @@ function Hero({ onBrowse, onHIW }: { onBrowse: () => void; onHIW: () => void }) 
         <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr 1fr', gridTemplateRows: '1fr 1fr', height: '100%', gap: 3 }}>
           {/* col 1, rows 1-2 */}
           <div style={{ gridColumn: '1', gridRow: '1 / 3', overflow: 'hidden', backgroundColor: '#D9D5CF' }}>
-            <img src={mosaic[0].imageUrl} alt={mosaic[0].name} style={{ width: '100%', height: '100%', objectFit: 'cover', display: 'block' }} />
+            <img src={mosaic[0].imageUrl} alt={mosaic[0].name} {...noSave} style={{ width: '100%', height: '100%', objectFit: 'cover', display: 'block' }} />
           </div>
           {/* col 2, row 1 */}
           <div style={{ gridColumn: '2', gridRow: '1', overflow: 'hidden', backgroundColor: '#D9D5CF' }}>
-            <img src={mosaic[1].imageUrl} alt={mosaic[1].name} style={{ width: '100%', height: '100%', objectFit: 'cover', display: 'block' }} />
+            <img src={mosaic[1].imageUrl} alt={mosaic[1].name} {...noSave} style={{ width: '100%', height: '100%', objectFit: 'cover', display: 'block' }} />
           </div>
           {/* col 3, rows 1-2 */}
           <div style={{ gridColumn: '3', gridRow: '1 / 3', overflow: 'hidden', backgroundColor: '#D9D5CF' }}>
-            <img src={mosaic[2].imageUrl} alt={mosaic[2].name} style={{ width: '100%', height: '100%', objectFit: 'cover', display: 'block' }} />
+            <img src={mosaic[2].imageUrl} alt={mosaic[2].name} {...noSave} style={{ width: '100%', height: '100%', objectFit: 'cover', display: 'block' }} />
           </div>
           {/* col 2, row 2 */}
           <div style={{ gridColumn: '2', gridRow: '2', overflow: 'hidden', backgroundColor: '#D9D5CF' }}>
-            <img src={mosaic[3].imageUrl} alt={mosaic[3].name} style={{ width: '100%', height: '100%', objectFit: 'cover', display: 'block' }} />
+            <img src={mosaic[3].imageUrl} alt={mosaic[3].name} {...noSave} style={{ width: '100%', height: '100%', objectFit: 'cover', display: 'block' }} />
           </div>
         </div>
       </div>
@@ -829,7 +845,7 @@ function About() {
         <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 8, aspectRatio: '1' }}>
           {PRODUCTS.slice(13, 17).map(p => (
             <div key={p.id} style={{ overflow: 'hidden', borderRadius: 4, backgroundColor: '#2D2D2A' }}>
-              <img src={p.imageUrl} alt={p.name} style={{ width: '100%', height: '100%', objectFit: 'cover', display: 'block', opacity: 0.82 }} />
+              <img src={p.imageUrl} alt={p.name} {...noSave} style={{ width: '100%', height: '100%', objectFit: 'cover', display: 'block', opacity: 0.82 }} />
             </div>
           ))}
         </div>
@@ -1048,11 +1064,13 @@ function ProductPage({ p, onBack }: { p: Product; onBack: () => void }) {
         {/* Left — sticky image */}
         <div style={{ position: 'sticky', top: 80 }}>
           <div style={{
-            borderRadius: 6, overflow: 'hidden', backgroundColor: '#E8E4DF',
+            position: 'relative', borderRadius: 6, overflow: 'hidden', backgroundColor: '#E8E4DF',
             aspectRatio: p.ar,
           }}>
             <img src={p.imageUrl.replace('w=700', 'w=900')} alt={`${p.name} poster`}
+              {...noSave}
               style={{ width: '100%', height: '100%', objectFit: 'cover', display: 'block' }} />
+              <Watermark />
           </div>
           {/* Category tag */}
           <div style={{ marginTop: 12, display: 'flex', gap: 8 }}>
