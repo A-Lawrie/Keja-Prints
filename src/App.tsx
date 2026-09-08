@@ -1,5 +1,5 @@
 import { useState, useEffect } from 'react'
-import { PRODUCTS, CATEGORY_COVERS, type Category, type Product } from './data/Products'
+import { PRODUCTS, CATEGORY_COVERS, type Category, type Product, CATEGORIES } from './data/Products'
 
 // ─── Types ─────────────────────────────────────────────────────────────────────
 

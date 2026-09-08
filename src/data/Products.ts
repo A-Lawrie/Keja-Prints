@@ -223,14 +223,14 @@ export const CATEGORIES: Category[] = [
 ]
 
 export const CATEGORY_COVERS: Partial<Record<Category, string>> = {
-  Music: 'https://res.cloudinary.com/zfgt2fon/image/upload/f_auto,q_auto/god_s_plan',
-  Cars: 'https://res.cloudinary.com/zfgt2fon/image/upload/v1788866556/hwbt-floral.png',
-  Minimal: 'https://images.unsplash.com/photo-1761156254622-7b66649b1f69?w=500&h=640&fit=crop&auto=format',
-  Motivation: 'https://images.unsplash.com/photo-1528716321680-815a8cdb8cbe?w=500&h=640&fit=crop&auto=format',
-  Kenyan: 'https://images.unsplash.com/photo-1611348524140-53c9a25263d6?w=500&h=640&fit=crop&auto=format',
-  Abstract: 'https://images.unsplash.com/photo-1699465301322-362016624dd7?w=500&h=640&fit=crop&auto=format',
-  Lifestyle: 'https://images.unsplash.com/photo-1711602741026-22e8a7df1a51?w=500&h=640&fit=crop&auto=format',
-  Sports: 'https://images.unsplash.com/photo-1629901925121-8a141c2a42f4?w=500&h=640&fit=crop&auto=format',
-  Anime: 'https://images.unsplash.com/photo-1576843789623-ba1d22102973?w=500&h=640&fit=crop&auto=format',
-  Movies: 'https://images.unsplash.com/photo-1616530940355-351fabd9524b?w=500&h=640&fit=crop&auto=format',
+  Music: 'https://res.cloudinary.com/zfgt2fon/image/upload/v1788867330/Artwork-17.jpg',
+  Cars: 'https://res.cloudinary.com/zfgt2fon/image/upload/v1788867333/Artwork-27.jpg',
+  Minimal: 'https://res.cloudinary.com/zfgt2fon/image/upload/v1788867333/Artwork-26.1.jpg',
+  Motivation: 'https://res.cloudinary.com/zfgt2fon/image/upload/v1788867407/I_deserve_it_all.png',
+  Kenyan: 'https://res.cloudinary.com/zfgt2fon/image/upload/v1788867333/Artwork-12.jpg',
+  Abstract: 'https://res.cloudinary.com/zfgt2fon/image/upload/v1788867328/Artwork-8.jpg',
+  Lifestyle: 'https://res.cloudinary.com/zfgt2fon/image/upload/v1788866426/god_s_plan.png',
+  Sports: 'https://res.cloudinary.com/zfgt2fon/image/upload/v1788867430/lulu.png',
+  Anime: 'https://res.cloudinary.com/zfgt2fon/image/upload/v1788867405/lookism2_Original.jpg',
+  Movies: 'https://res.cloudinary.com/zfgt2fon/image/upload/v1788867442/Peaky_Blinders.png',
 }
