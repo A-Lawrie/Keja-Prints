@@ -32,10 +32,10 @@ export const PRODUCTS: Product[] = [
     description: 'A minimal statement piece designed to add calm and intention to any room. Clean geometry that speaks without shouting.',
   },
   {
-    id: 'sunny-horizon',
-    name: 'Sunny Horizon',
-    category: 'Minimal',
-    imageUrl: 'https://res.cloudinary.com/zfgt2fon/image/upload/v1788867327/Artwork-10.jpg',
+    id: 'audi-a',
+    name: 'A',
+    category: 'Cars',
+    imageUrl: 'https://res.cloudinary.com/zfgt2fon/image/upload/v1788941779/A.jpg',
     ar: '',
     description: 'Warm tones and flowing forms that capture the fleeting beauty of late afternoon light. Pairs beautifully with natural materials.',
   },
@@ -94,6 +94,14 @@ export const PRODUCTS: Product[] = [
     imageUrl: 'https://res.cloudinary.com/zfgt2fon/image/upload/v1788867326/Artwork-6.jpg',
     ar: '',
     description: 'A contemporary view of Kenyan urban life — bridges, buildings and movement in one frame.',
+  },
+  {
+    id: 'sunny-horizon',
+    name: 'Sunny Horizon',
+    category: 'Minimal',
+    imageUrl: 'https://res.cloudinary.com/zfgt2fon/image/upload/v1788867327/Artwork-10.jpg',
+    ar: '',
+    description: 'Warm tones and flowing forms that capture the fleeting beauty of late afternoon light. Pairs beautifully with natural materials.',
   },
   {
     id: 'stay-hungry',
@@ -254,6 +262,22 @@ export const PRODUCTS: Product[] = [
     imageUrl: 'https://res.cloudinary.com/zfgt2fon/image/upload/v1788867334/Artwork-25.jpg',
     ar: '3/4',
     description: 'Classic cinema energy. For movie lovers who want their walls to tell a story.',
+  },
+  {
+    id: 'audi-u',
+    name: 'U',
+    category: 'Cars',
+    imageUrl: 'https://res.cloudinary.com/zfgt2fon/image/upload/v1788941784/U.jpg',
+    ar: '',
+    description: 'Warm tones and flowing forms that capture the fleeting beauty of late afternoon light. Pairs beautifully with natural materials.',
+  },
+  {
+    id: 'audi-d',
+    name: 'D',
+    category: 'Cars',
+    imageUrl: 'https://res.cloudinary.com/zfgt2fon/image/upload/v1788941779/D.jpg',
+    ar: '',
+    description: 'Warm tones and flowing forms that capture the fleeting beauty of late afternoon light. Pairs beautifully with natural materials.',
   },
 ]
 

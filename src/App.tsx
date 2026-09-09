@@ -170,8 +170,9 @@ function Nav({ page, go }: { page: Page; go: (p: Page) => void }) {
         <div style={{ maxWidth: 1440, margin: '0 auto', height: '100%', padding: '0 clamp(16px,4vw,48px)', display: 'flex', alignItems: 'center', justifyContent: 'space-between' }}>
           {/* Wordmark */}
           <button onClick={() => go('home')} style={{ background: 'none', border: 'none', cursor: 'pointer', display: 'flex', alignItems: 'baseline', gap: 4, padding: 0 }}>
-            <span style={{ fontFamily: "'DM Serif Display', serif", fontSize: '1.35rem', fontStyle: 'italic', color: '#1C1C1A', letterSpacing: '-0.01em' }}>Keja</span>
-            <span style={{ fontFamily: "'DM Serif Display', serif", fontSize: '1.35rem', color: '#2D6A4F', letterSpacing: '-0.01em' }}>Prints</span>
+            {/* <span style={{ fontFamily: "'DM Serif Display', serif", fontSize: '1.35rem', fontStyle: 'italic', color: '#1C1C1A', letterSpacing: '-0.01em' }}>Keja</span>
+            <span style={{ fontFamily: "'DM Serif Display', serif", fontSize: '1.35rem', color: '#2D6A4F', letterSpacing: '-0.01em' }}>Prints</span> */}
+            <img src="/assets/Keja-Prints-Logo.png" alt="Keja Prints Logo" width="90" height="90" />
           </button>
 
           {/* Desktop links */}
