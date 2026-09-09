@@ -825,7 +825,7 @@ function ProductPage({ p, onBack }: { p: Product; onBack: () => void }) {
       <div style={{ maxWidth: 1440, margin: '0 auto', padding: '28px clamp(16px,4vw,48px) 0', display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 'clamp(28px,5vw,72px)', alignItems: 'start' }}
         className="product-grid">
         {/* Left — sticky image */}
-        <div style={{ position: 'sticky', top: 80 }}>
+        <div style={{ position: 'sticky', top: 80 }} className="product-image-wrap">
           <div style={{
             position: 'relative', borderRadius: 6, overflow: 'hidden', backgroundColor: '#E8E4DF',
             aspectRatio: p.ar,
@@ -1002,6 +1002,7 @@ function ProductPage({ p, onBack }: { p: Product; onBack: () => void }) {
       <style>{`
         @media(max-width:768px){
           .product-grid{grid-template-columns:1fr !important;}
+          .product-image-wrap{position:static !important; top:auto !important;}
           .mobile-sticky{display:flex !important;}
         }
       `}</style>
