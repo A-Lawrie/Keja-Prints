@@ -1,6 +1,10 @@
 import { useState, useEffect } from 'react'
 import { PRODUCTS, CATEGORY_COVERS, type Category, type Product, CATEGORIES } from './data/Products'
 
+function cld(url: string, width: number): string {
+  return url.replace('/upload/', `/upload/f_auto,q_auto,w_${width}/`)
+}
+
 // ─── Types ─────────────────────────────────────────────────────────────────────
 
 type Finish = 'framed' | 'wood'
@@ -278,7 +282,7 @@ function Card({ p, onClick }: { p: Product; onClick: () => void }) {
       {/* Image */}
       <div style={{ position: 'relative', overflow: 'hidden', borderRadius: 4, backgroundColor: '#E8E4DF', aspectRatio: p.ar }}>
         <img
-          src={p.imageUrl}
+          src={cld(p.imageUrl, 500)}
           alt={`${p.name} poster`}
           loading="lazy"
           {...noSave}
@@ -431,19 +435,19 @@ function Hero({ onBrowse, onHIW }: { onBrowse: () => void; onHIW: () => void }) 
         <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr 1fr', gridTemplateRows: '1fr 1fr', height: '100%', gap: 3 }}>
           {/* col 1, rows 1-2 */}
           <div style={{ gridColumn: '1', gridRow: '1 / 3', overflow: 'hidden', backgroundColor: '#D9D5CF' }}>
-            <img src={mosaic[0].imageUrl} alt={mosaic[0].name} {...noSave} style={{ width: '100%', height: '100%', objectFit: 'cover', display: 'block' }} />
+            <img src={cld(mosaic[0].imageUrl, 800)} alt={mosaic[0].name} {...noSave} style={{ width: '100%', height: '100%', objectFit: 'cover', display: 'block' }} />
           </div>
           {/* col 2, row 1 */}
           <div style={{ gridColumn: '2', gridRow: '1', overflow: 'hidden', backgroundColor: '#D9D5CF' }}>
-            <img src={mosaic[1].imageUrl} alt={mosaic[1].name} {...noSave} style={{ width: '100%', height: '100%', objectFit: 'cover', display: 'block' }} />
+            <img src={cld(mosaic[1].imageUrl, 800)} alt={mosaic[1].name} {...noSave} style={{ width: '100%', height: '100%', objectFit: 'cover', display: 'block' }} />
           </div>
           {/* col 3, rows 1-2 */}
           <div style={{ gridColumn: '3', gridRow: '1 / 3', overflow: 'hidden', backgroundColor: '#D9D5CF' }}>
-            <img src={mosaic[2].imageUrl} alt={mosaic[2].name} {...noSave} style={{ width: '100%', height: '100%', objectFit: 'cover', display: 'block' }} />
+            <img src={cld(mosaic[2].imageUrl, 800)} alt={mosaic[2].name} {...noSave} style={{ width: '100%', height: '100%', objectFit: 'cover', display: 'block' }} />
           </div>
           {/* col 2, row 2 */}
           <div style={{ gridColumn: '2', gridRow: '2', overflow: 'hidden', backgroundColor: '#D9D5CF' }}>
-            <img src={mosaic[3].imageUrl} alt={mosaic[3].name} {...noSave} style={{ width: '100%', height: '100%', objectFit: 'cover', display: 'block' }} />
+            <img src={cld(mosaic[3].imageUrl, 800)} alt={mosaic[3].name} {...noSave} style={{ width: '100%', height: '100%', objectFit: 'cover', display: 'block' }} />
           </div>
         </div>
       </div>
@@ -519,7 +523,7 @@ function Categories({ onSelect }: { onSelect: (c: Category) => void }) {
                 onMouseEnter={e => { const i = e.currentTarget.querySelector('img') as HTMLImageElement; if (i) i.style.transform = 'scale(1.07)' }}
                 onMouseLeave={e => { const i = e.currentTarget.querySelector('img') as HTMLImageElement; if (i) i.style.transform = 'scale(1)' }}
               >
-                {img && <img src={img} alt={cat} style={{ width: '100%', height: '100%', objectFit: 'cover', display: 'block', transition: 'transform 0.42s cubic-bezier(0.25,0.46,0.45,0.94)' }} />}
+                {img && <img src={cld(img, 500)} alt={cat} style={{ width: '100%', height: '100%', objectFit: 'cover', display: 'block', transition: 'transform 0.42s cubic-bezier(0.25,0.46,0.45,0.94)' }} />}
                 <div style={{
                   position: 'absolute', inset: 0,
                   background: 'linear-gradient(to top, rgba(28,28,26,0.75) 0%, rgba(28,28,26,0.0) 55%)',
@@ -608,7 +612,7 @@ function About() {
         <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 8, aspectRatio: '1' }}>
           {PRODUCTS.slice(13, 17).map(p => (
             <div key={p.id} style={{ overflow: 'hidden', borderRadius: 4, backgroundColor: '#2D2D2A' }}>
-              <img src={p.imageUrl} alt={p.name} {...noSave} style={{ width: '100%', height: '100%', objectFit: 'cover', display: 'block', opacity: 0.82 }} />
+              <img src={cld(p.imageUrl, 600)} alt={p.name} {...noSave} style={{ width: '100%', height: '100%', objectFit: 'cover', display: 'block', opacity: 0.82 }} />
             </div>
           ))}
         </div>
@@ -830,7 +834,7 @@ function ProductPage({ p, onBack }: { p: Product; onBack: () => void }) {
             position: 'relative', borderRadius: 6, overflow: 'hidden', backgroundColor: '#E8E4DF',
             aspectRatio: p.ar,
           }}>
-            <img src={p.imageUrl.replace('w=700', 'w=900')} alt={`${p.name} poster`}
+            <img src={cld(p.imageUrl, 1000)} alt={`${p.name} poster`}
               {...noSave}
               style={{ width: '100%', height: '100%', objectFit: 'cover', display: 'block' }} />
               <Watermark />
