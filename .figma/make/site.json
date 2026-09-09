@@ -1,10 +1,14 @@
 {
+  "title": "Keja Prints — Kenyan Poster Art, Framed or Wood Mounted",
   "description": "Browse a curated catalogue of stylish Kenyan posters with clear pricing and finish options, then easily order your chosen wall art via WhatsApp.",
   "robots": {
-    "index": false
+    "index": true
+  },
+  "openGraph": {
+    "image": "https://res.cloudinary.com/zfgt2fon/image/upload/c_fill,w_1200,h_630,g_auto/v1788867333/Artwork-12.jpg"
   },
   "accessibility": {
-    "addBypassLinks": false,
+    "addBypassLinks": true,
     "ignoreReducedMotion": false
   }
 }
